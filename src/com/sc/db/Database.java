@@ -10,7 +10,6 @@ import java.util.ArrayList;
 
 public class Database {
 	public static DISPLAY sex;
-	private final String projectname = "Barcharts";
 
 	public Database(){
 		sex = DISPLAY.M;
@@ -20,8 +19,9 @@ public class Database {
 		try {
 			// Test Connection
 			String path = new File("").getAbsolutePath();
-			path += "/" + projectname +".app/Contents/db";
+			path += "/db";
 			Connection conn = DriverManager.getConnection("jdbc:derby:"+path);
+			System.out.println("jdbc:derby:" + path);
 			System.out.println("Database Connected");
 			Statement s = conn.createStatement();
 //			r = s.executeQuery("SELECT * FROM ");
